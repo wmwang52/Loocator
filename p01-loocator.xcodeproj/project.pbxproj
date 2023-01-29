@@ -80,9 +80,9 @@
 		871EEAA0298330A100A3B09E /* Restroom Search */ = {
 			isa = PBXGroup;
 			children = (
-				871EEAA1298330BC00A3B09E /* RestroomSearchView.swift */,
-				871EEAA5298330CF00A3B09E /* RestroomSearchViewModel.swift */,
 				871EEAA3298330C800A3B09E /* RestroomSearchService.swift */,
+				871EEAA5298330CF00A3B09E /* RestroomSearchViewModel.swift */,
+				871EEAA1298330BC00A3B09E /* RestroomSearchView.swift */,
 			);
 			path = "Restroom Search";
 			sourceTree = "<group>";

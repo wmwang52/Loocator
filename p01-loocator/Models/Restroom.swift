@@ -32,7 +32,23 @@ import Foundation
 // MARK: Model Definition
 
 struct Restroom: Codable, Identifiable {
-    // TODO: Build out this model from the JSON above
+    var id: Int
+    var name: String
+    var street: String
+    var city: String
+    var state: String
+    var country: String
+    var latitude: Double
+    var longitude: Double
+    var distance: Double
+    var accessible: Bool
+    var unisex: Bool
+    var changingTable: Bool
+    var directions: String?
+    var createdAt: Date
+    var updatedAt: Date
+    var downvote: Int
+    var upvote: Int
 }
 
 // MARK: Computed Properties
@@ -50,5 +66,6 @@ extension Restroom {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return decoder
+        
     }
 }

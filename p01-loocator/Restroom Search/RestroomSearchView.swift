@@ -9,18 +9,23 @@ import SwiftUI
 
 struct RestroomSearchView: View {
     @StateObject private var vm = RestroomsSearchViewModel()
-    
     var body: some View {
         List {
             locationInputFields
             
-            Button("Find Restrooms") { vm.startRestroomSearch() }
+            Button("Find Restrooms") {
+                vm.startRestroomSearch()
+            }
             
             if let errorMessage = vm.errorMessage {
                 Section("Error Message") {
                     Text(errorMessage)
                 }
-            } else if !vm.restrooms.isEmpty {
+            } else if !(vm.LoadingMessage == ""){
+                Section("Results") {
+                    Text(vm.LoadingMessage)
+                }
+            }else if !vm.restrooms.isEmpty {
                 Section("Results") {
                     restroomResultsList
                 }

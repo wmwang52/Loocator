@@ -17,6 +17,8 @@ class RestroomsSearchViewModel: ObservableObject {
     @Published var restrooms: [Restroom] = []
     @Published var errorMessage: String? = nil
     
+    @Published var LoadingMessage: String = ""
+    
     private func setRestrooms(restrooms: [Restroom]) {
         self.restrooms = restrooms
         self.errorMessage = nil
@@ -36,5 +38,15 @@ class RestroomsSearchViewModel: ObservableObject {
         // TODO: Make a call to `service.searchRestrooms` and handle the error well
         // To update the restrooms, you should use the `setRestrooms(...)` method to make sure
         // To handle the error, you should call `setError(...)` and use `error.localizedDescription` as the message
+        Task{
+            do{
+                LoadingMessage = "Currently Loading Your Results!"
+                let restrooms = try await service.searchRestrooms(latitude: latitude, longitude: longitude)
+                setRestrooms(restrooms: restrooms)
+                LoadingMessage = ""
+            }catch{
+                setError(message: error.localizedDescription)
+            }
+        }
     }
 }
