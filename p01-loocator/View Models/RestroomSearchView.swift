@@ -10,16 +10,13 @@ import SwiftUI
 struct RestroomSearchView: View {
     @StateObject private var vm = RestroomsSearchViewModel()
     var body: some View {
+        
         List {
             Button("Find Restrooms") {
                 vm.startRestroomSearch()
             }
             
-            if let errorMessage = vm.errorMessage {
-                Section("Error Message") {
-                    Text(errorMessage)
-                }
-            }
+            
             Section("Results") {
                 switch vm.state {
                 case .idle:
@@ -33,6 +30,11 @@ struct RestroomSearchView: View {
                     
                 case .error(let message):
                     Text(message)
+                }
+            }
+            if let errorMessage = vm.errorMessage {
+                Section("Error Message") {
+                    Text(errorMessage)
                 }
             }
         }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		34C17C862990666400831417 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C17C852990666400831417 /* Location.swift */; };
-		34C17C892990668600831417 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C17C882990668600831417 /* LocationViewModel.swift */; };
 		34C17C8C299066C100831417 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C17C8B299066C100831417 /* LocationManager.swift */; };
 		871EEA9329832FE400A3B09E /* p01_loocatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEA9229832FE400A3B09E /* p01_loocatorApp.swift */; };
 		871EEA9529832FE400A3B09E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEA9429832FE400A3B09E /* ContentView.swift */; };
@@ -22,7 +21,6 @@
 
 /* Begin PBXFileReference section */
 		34C17C852990666400831417 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		34C17C882990668600831417 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		34C17C8B299066C100831417 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		871EEA8F29832FE400A3B09E /* p01-loocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "p01-loocator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871EEA9229832FE400A3B09E /* p01_loocatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p01_loocatorApp.swift; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 		34C17C8A2990668C00831417 /* LocationSearch */ = {
 			isa = PBXGroup;
 			children = (
-				34C17C882990668600831417 /* LocationViewModel.swift */,
 				34C17C8B299066C100831417 /* LocationManager.swift */,
 			);
 			path = LocationSearch;
@@ -197,7 +194,6 @@
 				871EEAA2298330BC00A3B09E /* RestroomSearchView.swift in Sources */,
 				871EEA9329832FE400A3B09E /* p01_loocatorApp.swift in Sources */,
 				34C17C862990666400831417 /* Location.swift in Sources */,
-				34C17C892990668600831417 /* LocationViewModel.swift in Sources */,
 				34C17C8C299066C100831417 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
