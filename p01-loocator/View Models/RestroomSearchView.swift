@@ -11,8 +11,6 @@ struct RestroomSearchView: View {
     @StateObject private var vm = RestroomsSearchViewModel()
     var body: some View {
         List {
-            locationInputFields
-            
             Button("Find Restrooms") {
                 vm.startRestroomSearch()
             }
@@ -21,25 +19,23 @@ struct RestroomSearchView: View {
                 Section("Error Message") {
                     Text(errorMessage)
                 }
-            } else if !(vm.LoadingMessage == ""){
-                Section("Results") {
-                    Text(vm.LoadingMessage)
-                }
-            }else if !vm.restrooms.isEmpty {
-                Section("Results") {
+            }
+            Section("Results") {
+                switch vm.state {
+                case .idle:
+                    Text("No location to show. Please fetch now")
+                    
+                case .loading:
+                    ProgressView()
+                    
+                case .success:
                     restroomResultsList
+                    
+                case .error(let message):
+                    Text(message)
                 }
             }
         }
-    }
-    
-    private var locationInputFields: some View {
-        Section("Latitude & Longitude") {
-            TextField("Latitude", text: $vm.latitude)
-            TextField("Longitude", text: $vm.longitude)
-        }
-        .keyboardType(.numberPad)
-        .onSubmit { vm.startRestroomSearch() }
     }
     
     private var restroomResultsList: some View {

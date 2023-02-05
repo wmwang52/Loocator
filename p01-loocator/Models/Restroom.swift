@@ -66,6 +66,5 @@ extension Restroom {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return decoder
-        
     }
 }

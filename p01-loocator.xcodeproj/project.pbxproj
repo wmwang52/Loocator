@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34C17C862990666400831417 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C17C852990666400831417 /* Location.swift */; };
+		34C17C892990668600831417 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C17C882990668600831417 /* LocationViewModel.swift */; };
+		34C17C8C299066C100831417 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C17C8B299066C100831417 /* LocationManager.swift */; };
 		871EEA9329832FE400A3B09E /* p01_loocatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEA9229832FE400A3B09E /* p01_loocatorApp.swift */; };
 		871EEA9529832FE400A3B09E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEA9429832FE400A3B09E /* ContentView.swift */; };
 		871EEA9729832FE500A3B09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871EEA9629832FE500A3B09E /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34C17C852990666400831417 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		34C17C882990668600831417 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		34C17C8B299066C100831417 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		871EEA8F29832FE400A3B09E /* p01-loocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "p01-loocator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871EEA9229832FE400A3B09E /* p01_loocatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p01_loocatorApp.swift; sourceTree = "<group>"; };
 		871EEA9429832FE400A3B09E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +46,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34C17C84299065FF00831417 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				871EEAA1298330BC00A3B09E /* RestroomSearchView.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		34C17C8A2990668C00831417 /* LocationSearch */ = {
+			isa = PBXGroup;
+			children = (
+				34C17C882990668600831417 /* LocationViewModel.swift */,
+				34C17C8B299066C100831417 /* LocationManager.swift */,
+			);
+			path = LocationSearch;
+			sourceTree = "<group>";
+		};
 		871EEA8629832FE400A3B09E = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +84,10 @@
 			children = (
 				871EEA9229832FE400A3B09E /* p01_loocatorApp.swift */,
 				871EEA9429832FE400A3B09E /* ContentView.swift */,
+				34C17C84299065FF00831417 /* View Models */,
 				871EEAA7298331B300A3B09E /* Models */,
 				871EEAA0298330A100A3B09E /* Restroom Search */,
+				34C17C8A2990668C00831417 /* LocationSearch */,
 				871EEA9829832FE500A3B09E /* Preview Content */,
 				871EEA9629832FE500A3B09E /* Assets.xcassets */,
 			);
@@ -82,7 +107,6 @@
 			children = (
 				871EEAA3298330C800A3B09E /* RestroomSearchService.swift */,
 				871EEAA5298330CF00A3B09E /* RestroomSearchViewModel.swift */,
-				871EEAA1298330BC00A3B09E /* RestroomSearchView.swift */,
 			);
 			path = "Restroom Search";
 			sourceTree = "<group>";
@@ -91,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				871EEAA8298331E100A3B09E /* Restroom.swift */,
+				34C17C852990666400831417 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +196,9 @@
 				871EEAA4298330C800A3B09E /* RestroomSearchService.swift in Sources */,
 				871EEAA2298330BC00A3B09E /* RestroomSearchView.swift in Sources */,
 				871EEA9329832FE400A3B09E /* p01_loocatorApp.swift in Sources */,
+				34C17C862990666400831417 /* Location.swift in Sources */,
+				34C17C892990668600831417 /* LocationViewModel.swift in Sources */,
+				34C17C8C299066C100831417 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,9 +327,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"p01-loocator/Preview Content\"";
-				DEVELOPMENT_TEAM = Q9PPH2T3L2;
+				DEVELOPMENT_TEAM = 6C894L8XAD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Use Location Please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -312,7 +341,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.samuelshi.p01-loocator";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wmwang.p01-loocator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -331,6 +360,7 @@
 				DEVELOPMENT_TEAM = Q9PPH2T3L2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Use Location Please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

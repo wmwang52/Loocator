@@ -10,43 +10,58 @@ import Foundation
 @MainActor
 class RestroomsSearchViewModel: ObservableObject {
     private let service = RestroomSearchService()
-    
-    @Published var latitude: String = "35.9132"
-    @Published var longitude: String = "-79.0558"
+    private let locationManager = LocationManager()
+
+    var latitude: String = "35"
+    var longitude: String = "-79"
     
     @Published var restrooms: [Restroom] = []
     @Published var errorMessage: String? = nil
     
-    @Published var LoadingMessage: String = ""
+    @Published var state: LocationLoadingState = .idle
     
     private func setRestrooms(restrooms: [Restroom]) {
         self.restrooms = restrooms
-        self.errorMessage = nil
+        errorMessage = nil
     }
     
     private func setError(message: String) {
-        self.errorMessage = message
-        self.restrooms = []
+        errorMessage = message
+        restrooms = []
     }
     
     public func startRestroomSearch() {
-        guard let latitude = Double(latitude), let longitude = Double(longitude) else {
-            setError(message: "Invalid latitude or longitude")
-            return
-        }
+        state = .loading
+        locationManager.requestLocation()
+    }
+    
+    init() {
+        locationManager.delegate = self
+    }
+}
+
+enum LocationLoadingState {
+    case idle
+    case loading
+    case success(location: Location)
+    case error(message: String)
+}
+
+extension RestroomsSearchViewModel: LocationManagerDelegate {
+    func locationManager(_ manager: LocationManager, didUpdateLocation location: Location) {
+        state = .success(location: location)
         
-        // TODO: Make a call to `service.searchRestrooms` and handle the error well
-        // To update the restrooms, you should use the `setRestrooms(...)` method to make sure
-        // To handle the error, you should call `setError(...)` and use `error.localizedDescription` as the message
-        Task{
-            do{
-                LoadingMessage = "Currently Loading Your Results!"
-                let restrooms = try await service.searchRestrooms(latitude: latitude, longitude: longitude)
+        Task {
+            do {
+                let restrooms = try await service.searchRestrooms(latitude: location.latitude, longitude: location.longitude)
                 setRestrooms(restrooms: restrooms)
-                LoadingMessage = ""
-            }catch{
+            } catch {
                 setError(message: error.localizedDescription)
             }
         }
+    }
+    
+    func locationManager(_ manager: LocationManager, didFailError error: Error) {
+        state = .error(message: error.localizedDescription)
     }
 }
