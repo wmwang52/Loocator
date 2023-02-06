@@ -10,12 +10,10 @@ import SwiftUI
 struct RestroomSearchView: View {
     @StateObject private var vm = RestroomsSearchViewModel()
     var body: some View {
-        
         List {
             Button("Find Restrooms") {
                 vm.startRestroomSearch()
             }
-            
             
             Section("Results") {
                 switch vm.state {
@@ -32,6 +30,7 @@ struct RestroomSearchView: View {
                     Text(message)
                 }
             }
+            
             if let errorMessage = vm.errorMessage {
                 Section("Error Message") {
                     Text(errorMessage)
