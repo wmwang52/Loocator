@@ -48,6 +48,8 @@ struct RestroomSearchView: View {
                 Text(restroom.address)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                
+               
             }
         }
     }

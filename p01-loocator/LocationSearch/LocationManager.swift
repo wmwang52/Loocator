@@ -35,6 +35,7 @@ extension LocationManager {
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let clLocation = locations.last else { return }
+        
         let location = Location(latitude: clLocation.coordinate.latitude, longitude: clLocation.coordinate.longitude)
         delegate?.locationManager(self, didUpdateLocation: location)
     }

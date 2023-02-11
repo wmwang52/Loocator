@@ -49,17 +49,20 @@ enum LocationLoadingState {
 
 extension RestroomsSearchViewModel: LocationManagerDelegate {
     func locationManager(_ manager: LocationManager, didUpdateLocation location: Location) {
-        state = .success(location: location)
         
+        state = .success(location: location)
         Task {
             do {
+                
                 let restrooms = try await service.searchRestrooms(latitude: location.latitude, longitude: location.longitude)
                 setRestrooms(restrooms: restrooms)
             } catch {
                 setError(message: error.localizedDescription)
             }
         }
+        
     }
+    
     
     func locationManager(_ manager: LocationManager, didFailError error: Error) {
         state = .error(message: error.localizedDescription)
