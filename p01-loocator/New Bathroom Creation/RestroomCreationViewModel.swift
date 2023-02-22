@@ -8,7 +8,6 @@
 import Foundation
 @MainActor
 
-
 class RestroomCreationViewModel: ObservableObject {
     @Published var creationState: RestroomCreationState = .input
     
@@ -52,9 +51,6 @@ class RestroomCreationViewModel: ObservableObject {
         if restroomIsValid {
             creationState = .loading
             locationManager.requestLocation()
-        } else {
-            // FIX ERROR MESSAGE
-            print("error")
         }
     }
     
@@ -82,6 +78,7 @@ class RestroomCreationViewModel: ObservableObject {
                         genderNeutral: genderNeutral,
                         changingTable: changingTable)
     }
+
     private func createRestroom(for builder: RestroomBuilder) {
         Task {
             do {
@@ -97,11 +94,9 @@ class RestroomCreationViewModel: ObservableObject {
 extension RestroomCreationViewModel: LocationManagerDelegate {
     func locationManager(_ manager: LocationManager, didUpdateLocation location: Location) {
         createRestroom(for: createBuilder(with: location))
-
     }
     
     func locationManager(_ manager: LocationManager, didFailError error: Error) {
         creationState = .failed(message: "\(error)")
     }
 }
-

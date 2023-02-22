@@ -41,10 +41,6 @@ struct RestroomSearchView: View {
             }
         }
     }
-    
-        
-        
-    
 }
 
 struct SearchView_Previews: PreviewProvider {

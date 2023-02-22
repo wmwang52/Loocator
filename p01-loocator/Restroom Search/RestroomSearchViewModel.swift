@@ -14,15 +14,14 @@ class RestroomsSearchViewModel: ObservableObject {
 
     var latitude: String = "35"
     var longitude: String = "-74"
-    
-    
+
     @Published var state: RestroomSearchLoadingState = .idle
-    
+
     public func startRestroomSearch() {
         self.state = .loading
         self.locationManager.requestLocation()
     }
-    
+
     init() {
         self.locationManager.delegate = self
     }
@@ -34,7 +33,7 @@ extension RestroomsSearchViewModel: LocationManagerDelegate {
             do {
                 let restrooms = try await service.searchRestrooms(latitude: location.latitude, longitude: location.longitude)
                 self.state = .success(restrooms: restrooms)
-                
+
             } catch {
                 self.state = .error(message: error.localizedDescription)
             }

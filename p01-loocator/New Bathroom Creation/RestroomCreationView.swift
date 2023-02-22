@@ -8,7 +8,6 @@
 import SwiftUI
 @MainActor
 
-
 struct RestroomCreationView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var vm = RestroomCreationViewModel()
@@ -19,38 +18,36 @@ struct RestroomCreationView: View {
                 Section {
                     illustration
                 }
-                
                 switch vm.creationState {
                 case .input: inputView
                 case .loading: ProgressView()
                 case .failed(let message): errorView(message: message)
                 case .success(let message): successView(message: message)
                 }
-                
-            }.navigationTitle("Add to Loocater")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Dismiss") {
-                            dismiss()
-                        }
+            }
+            .navigationTitle("Add to Loocater")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Dismiss") {
+                        dismiss()
                     }
-                    
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            if (vm.creationState == .input) && (vm.restroomIsValid) {
-                                vm.createRestroomWithCurrentLocation()
-                            }
-                        } label: {
-                            if (vm.creationState == .input) && (vm.restroomIsValid) {
-                                Text("Save")
-                            } else {
-                                Text("Save")
-                                    .foregroundColor(.secondary)
-                            }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        if (vm.creationState == .input) && (vm.restroomIsValid) {
+                            vm.createRestroomWithCurrentLocation()
+                        }
+                    } label: {
+                        if (vm.creationState == .input) && (vm.restroomIsValid) {
+                            Text("Save")
+                        } else {
+                            Text("Save")
+                                .foregroundColor(.secondary)
                         }
                     }
                 }
+            }
         }
     }
     
