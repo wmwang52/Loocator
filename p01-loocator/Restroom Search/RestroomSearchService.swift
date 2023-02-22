@@ -15,7 +15,7 @@ struct RestroomSearchService {
         // TODO: Implement this service method by making a request to the following URL
         // https://learning.appteamcarolina.com/loocator/search
         
-        var components = URLComponents(string: "https://learning.appteamcarolina.com/loocator/search")
+        var components = URLComponents(string: "https://learning.appteamcarolina.com/loocator/restrooms")
         components?.queryItems = [URLQueryItem(name: "latitude", value: "\(latitude)"), URLQueryItem(name: "longitude", value: "\(longitude)")]
         
 //        print(components)

@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isShowingSheet = false
     var body: some View {
         NavigationStack {
             RestroomSearchView().navigationTitle("Loocator")
+
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            isShowingSheet.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
+
+        }.sheet(isPresented: $isShowingSheet) {
+            RestroomCreationView()
         }
     }
 }

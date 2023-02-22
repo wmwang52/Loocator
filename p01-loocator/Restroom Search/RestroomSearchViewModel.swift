@@ -13,58 +13,35 @@ class RestroomsSearchViewModel: ObservableObject {
     private let locationManager = LocationManager()
 
     var latitude: String = "35"
-    var longitude: String = "-79"
+    var longitude: String = "-74"
     
-    @Published var restrooms: [Restroom] = []
-    @Published var errorMessage: String? = nil
     
-    @Published var state: LocationLoadingState = .idle
-    
-    private func setRestrooms(restrooms: [Restroom]) {
-        self.restrooms = restrooms
-        errorMessage = nil
-    }
-    
-    private func setError(message: String) {
-        errorMessage = message
-        restrooms = []
-    }
+    @Published var state: RestroomSearchLoadingState = .idle
     
     public func startRestroomSearch() {
-        state = .loading
-        locationManager.requestLocation()
+        self.state = .loading
+        self.locationManager.requestLocation()
     }
     
     init() {
-        locationManager.delegate = self
+        self.locationManager.delegate = self
     }
-}
-
-enum LocationLoadingState {
-    case idle
-    case loading
-    case success(location: Location)
-    case error(message: String)
 }
 
 extension RestroomsSearchViewModel: LocationManagerDelegate {
     func locationManager(_ manager: LocationManager, didUpdateLocation location: Location) {
-        
-        state = .success(location: location)
         Task {
             do {
-                
                 let restrooms = try await service.searchRestrooms(latitude: location.latitude, longitude: location.longitude)
-                setRestrooms(restrooms: restrooms)
+                self.state = .success(restrooms: restrooms)
+                
             } catch {
-                setError(message: error.localizedDescription)
+                self.state = .error(message: error.localizedDescription)
             }
         }
-        
     }
-    
-    
+
     func locationManager(_ manager: LocationManager, didFailError error: Error) {
-        state = .error(message: error.localizedDescription)
+        self.state = .error(message: error.localizedDescription)
     }
 }

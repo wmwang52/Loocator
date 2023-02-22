@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 // MARK: Example JSON
 
 // {
@@ -34,30 +32,32 @@ import Foundation
 // MARK: Model Definition
 
 struct Restroom: Codable, Identifiable {
-    var id: Int
-    var name: String
-    var street: String
+    var id: UUID
+    var facilityName: String
+    var roomNumber: String?
+    var floorNumber: String?
+    var directions: String?
+    var streetAddress: String
     var city: String
     var state: String
     var country: String
     var latitude: Double
     var longitude: Double
-    var distance: Double
+    var distance: Double?
     var accessible: Bool
-    var unisex: Bool
+    var genderNeutral: Bool
     var changingTable: Bool
-    var directions: String?
     var createdAt: Date
     var updatedAt: Date
-    var downvote: Int
-    var upvote: Int
+    var downvotes: Int
+    var upvotes: Int
 }
 
 // MARK: Computed Properties
 
 extension Restroom {
     var address: String {
-        "\(street)\n\(city.capitalized), \(state)"
+        "\(streetAddress)\n\(city.capitalized), \(state)"
     }
 }
 

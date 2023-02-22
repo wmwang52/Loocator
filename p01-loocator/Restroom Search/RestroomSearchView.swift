@@ -23,36 +23,28 @@ struct RestroomSearchView: View {
                 case .loading:
                     ProgressView()
                     
-                case .success:
-                    restroomResultsList
+                case .success(let restrooms):
+                    ForEach(restrooms) { restroom in
+                        VStack(alignment: .leading) {
+                            Text(restroom.facilityName)
+                                .font(.callout)
+                            
+                            Text(restroom.address)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                    }
                     
                 case .error(let message):
                     Text(message)
                 }
             }
-            
-            if let errorMessage = vm.errorMessage {
-                Section("Error Message") {
-                    Text(errorMessage)
-                }
-            }
         }
     }
     
-    private var restroomResultsList: some View {
-        ForEach(vm.restrooms) { restroom in
-            VStack(alignment: .leading) {
-                Text(restroom.name)
-                    .font(.callout)
-                
-                Text(restroom.address)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                
-               
-            }
-        }
-    }
+        
+        
+    
 }
 
 struct SearchView_Previews: PreviewProvider {
