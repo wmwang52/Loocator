@@ -5,12 +5,14 @@
 //  Created by William Wang on 2/10/23.
 //
 
+import CoreLocation
 import Foundation
 @MainActor
 
 class RestroomCreationViewModel: ObservableObject {
     @Published var creationState: RestroomCreationState = .input
     
+    private let geocoder = CLGeocoder()
     private let service = RestroomCreationService()
     private let locationManager = LocationManager()
     
@@ -28,8 +30,10 @@ class RestroomCreationViewModel: ObservableObject {
     @Published var directions: String = ""
     @Published var distance: Double = 0.0
     
+    
     init() {
         locationManager.delegate = self
+        locationManager.requestLocation()
     }
     
     public func reset() {
@@ -48,10 +52,7 @@ class RestroomCreationViewModel: ObservableObject {
     }
     
     public func createRestroomWithCurrentLocation() {
-        if restroomIsValid {
-            creationState = .loading
             locationManager.requestLocation()
-        }
     }
     
     var restroomIsValid: Bool {
@@ -78,11 +79,12 @@ class RestroomCreationViewModel: ObservableObject {
                         genderNeutral: genderNeutral,
                         changingTable: changingTable)
     }
-
+    
     private func createRestroom(for builder: RestroomBuilder) {
         Task {
             do {
                 try await service.createRestroom(for: builder, isDebugRequest: isDebugRequest)
+                
                 creationState = .success(message: "Successfully Created Restroom at \(Date())")
             } catch {
                 creationState = .failed(message: error.localizedDescription)
@@ -93,7 +95,27 @@ class RestroomCreationViewModel: ObservableObject {
 
 extension RestroomCreationViewModel: LocationManagerDelegate {
     func locationManager(_ manager: LocationManager, didUpdateLocation location: Location) {
-        createRestroom(for: createBuilder(with: location))
+        if restroomIsValid {
+            creationState = .loading
+            // NEED TO CHANGE THIS
+            createRestroom(for: createBuilder(with: location))
+        } else {
+            let Newlocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+            geocoder.reverseGeocodeLocation(Newlocation, completionHandler: { placemarks, error in
+                if error != nil {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                
+                let pm = placemarks! as [CLPlacemark]
+
+                self.streetAddress = (pm[0].subThoroughfare ?? "") +
+                    " " + (pm[0].thoroughfare ?? "")
+                self.city = pm[0].locality ?? ""
+                self.state = pm[0].administrativeArea ?? ""
+                self.country = pm[0].isoCountryCode ?? ""
+                
+            })
+        }
     }
     
     func locationManager(_ manager: LocationManager, didFailError error: Error) {

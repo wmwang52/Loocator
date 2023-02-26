@@ -11,6 +11,7 @@ import Foundation
 struct RestroomCreationService {
     private let session = URLSession.shared
     private let decoder: JSONDecoder = Restroom.decoder
+
     private let encoder = JSONEncoder()
 
     // Send isDebug Request as query parameter
@@ -29,7 +30,7 @@ struct RestroomCreationService {
         request.httpBody = encoded
 
         let (data, _) = try await session.data(for: request)
-        
+
         let restroom = try decoder.decode(Restroom.self, from: data)
         return restroom
     }

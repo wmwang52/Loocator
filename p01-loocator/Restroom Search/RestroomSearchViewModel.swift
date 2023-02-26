@@ -12,8 +12,8 @@ class RestroomsSearchViewModel: ObservableObject {
     private let service = RestroomSearchService()
     private let locationManager = LocationManager()
 
-    var latitude: String = "35"
-    var longitude: String = "-74"
+    var latitude: String = ""
+    var longitude: String = ""
 
     @Published var state: RestroomSearchLoadingState = .idle
 
