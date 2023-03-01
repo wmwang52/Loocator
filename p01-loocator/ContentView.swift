@@ -17,7 +17,7 @@ struct ContentView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             isShowingSheet.toggle()
-                            
+
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -25,8 +25,9 @@ struct ContentView: View {
                 }
 
         }.sheet(isPresented: $isShowingSheet) {
-            
             RestroomCreationView()
+            
+            
         }
     }
 }

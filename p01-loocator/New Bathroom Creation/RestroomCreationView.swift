@@ -38,6 +38,7 @@ struct RestroomCreationView: View {
                         if (vm.creationState == .input) && (vm.restroomIsValid) {
                             vm.createRestroomWithCurrentLocation()
                         }
+                        
                     } label: {
                         if (vm.creationState == .input) && (vm.restroomIsValid) {
                             Text("Save")
