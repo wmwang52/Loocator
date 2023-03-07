@@ -12,15 +12,17 @@
 		3453CF0D299704C700AA3B98 /* RestroomCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453CF0C299704C700AA3B98 /* RestroomCreationView.swift */; };
 		3453CF0F2997094100AA3B98 /* RestroomBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453CF0E2997094100AA3B98 /* RestroomBuilder.swift */; };
 		3453CF1229970AD300AA3B98 /* RestroomCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453CF1129970AD300AA3B98 /* RestroomCreationViewModel.swift */; };
-		3453CF1429970AFD00AA3B98 /* RestroomCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453CF1329970AFD00AA3B98 /* RestroomCreationService.swift */; };
 		34C17C862990666400831417 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C17C852990666400831417 /* Location.swift */; };
 		34C17C8C299066C100831417 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C17C8B299066C100831417 /* LocationManager.swift */; };
+		34CAAB2229B7CED1006CCA5A /* RestroomsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAAB2129B7CED1006CCA5A /* RestroomsService.swift */; };
+		34CAAB2529B7D008006CCA5A /* RestroomDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAAB2429B7D008006CCA5A /* RestroomDetailsView.swift */; };
+		34CAAB2729B7D021006CCA5A /* RestroomDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAAB2629B7D021006CCA5A /* RestroomDetailsViewModel.swift */; };
+		34CAAB2A29B7D030006CCA5A /* RestroomAttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAAB2929B7D030006CCA5A /* RestroomAttributeView.swift */; };
 		871EEA9329832FE400A3B09E /* p01_loocatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEA9229832FE400A3B09E /* p01_loocatorApp.swift */; };
 		871EEA9529832FE400A3B09E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEA9429832FE400A3B09E /* ContentView.swift */; };
 		871EEA9729832FE500A3B09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871EEA9629832FE500A3B09E /* Assets.xcassets */; };
 		871EEA9A29832FE500A3B09E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871EEA9929832FE500A3B09E /* Preview Assets.xcassets */; };
 		871EEAA2298330BC00A3B09E /* RestroomSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEAA1298330BC00A3B09E /* RestroomSearchView.swift */; };
-		871EEAA4298330C800A3B09E /* RestroomSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEAA3298330C800A3B09E /* RestroomSearchService.swift */; };
 		871EEAA6298330CF00A3B09E /* RestroomSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEAA5298330CF00A3B09E /* RestroomSearchViewModel.swift */; };
 		871EEAA9298331E100A3B09E /* Restroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EEAA8298331E100A3B09E /* Restroom.swift */; };
 /* End PBXBuildFile section */
@@ -32,16 +34,18 @@
 		3453CF0C299704C700AA3B98 /* RestroomCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomCreationView.swift; sourceTree = "<group>"; };
 		3453CF0E2997094100AA3B98 /* RestroomBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomBuilder.swift; sourceTree = "<group>"; };
 		3453CF1129970AD300AA3B98 /* RestroomCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomCreationViewModel.swift; sourceTree = "<group>"; };
-		3453CF1329970AFD00AA3B98 /* RestroomCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomCreationService.swift; sourceTree = "<group>"; };
 		34C17C852990666400831417 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		34C17C8B299066C100831417 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		34CAAB2129B7CED1006CCA5A /* RestroomsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomsService.swift; sourceTree = "<group>"; };
+		34CAAB2429B7D008006CCA5A /* RestroomDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomDetailsView.swift; sourceTree = "<group>"; };
+		34CAAB2629B7D021006CCA5A /* RestroomDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomDetailsViewModel.swift; sourceTree = "<group>"; };
+		34CAAB2929B7D030006CCA5A /* RestroomAttributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomAttributeView.swift; sourceTree = "<group>"; };
 		871EEA8F29832FE400A3B09E /* p01-loocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "p01-loocator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871EEA9229832FE400A3B09E /* p01_loocatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p01_loocatorApp.swift; sourceTree = "<group>"; };
 		871EEA9429832FE400A3B09E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		871EEA9629832FE500A3B09E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		871EEA9929832FE500A3B09E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		871EEAA1298330BC00A3B09E /* RestroomSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomSearchView.swift; sourceTree = "<group>"; };
-		871EEAA3298330C800A3B09E /* RestroomSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomSearchService.swift; sourceTree = "<group>"; };
 		871EEAA5298330CF00A3B09E /* RestroomSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomSearchViewModel.swift; sourceTree = "<group>"; };
 		871EEAA8298331E100A3B09E /* Restroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restroom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,10 +64,9 @@
 		3453CF1029970AAE00AA3B98 /* New Bathroom Creation */ = {
 			isa = PBXGroup;
 			children = (
+				3453CF1129970AD300AA3B98 /* RestroomCreationViewModel.swift */,
 				343D566A29A51A6500E17014 /* RestroomCreationState.swift */,
 				3453CF0C299704C700AA3B98 /* RestroomCreationView.swift */,
-				3453CF1129970AD300AA3B98 /* RestroomCreationViewModel.swift */,
-				3453CF1329970AFD00AA3B98 /* RestroomCreationService.swift */,
 			);
 			path = "New Bathroom Creation";
 			sourceTree = "<group>";
@@ -72,8 +75,19 @@
 			isa = PBXGroup;
 			children = (
 				34C17C8B299066C100831417 /* LocationManager.swift */,
+				34CAAB2129B7CED1006CCA5A /* RestroomsService.swift */,
 			);
 			path = LocationSearch;
+			sourceTree = "<group>";
+		};
+		34CAAB2329B7CFF0006CCA5A /* RestroomDetails */ = {
+			isa = PBXGroup;
+			children = (
+				34CAAB2629B7D021006CCA5A /* RestroomDetailsViewModel.swift */,
+				34CAAB2429B7D008006CCA5A /* RestroomDetailsView.swift */,
+				34CAAB2929B7D030006CCA5A /* RestroomAttributeView.swift */,
+			);
+			path = RestroomDetails;
 			sourceTree = "<group>";
 		};
 		871EEA8629832FE400A3B09E = {
@@ -100,6 +114,7 @@
 				871EEAA7298331B300A3B09E /* Models */,
 				3453CF1029970AAE00AA3B98 /* New Bathroom Creation */,
 				871EEAA0298330A100A3B09E /* Restroom Search */,
+				34CAAB2329B7CFF0006CCA5A /* RestroomDetails */,
 				34C17C8A2990668C00831417 /* LocationSearch */,
 				871EEA9829832FE500A3B09E /* Preview Content */,
 				871EEA9629832FE500A3B09E /* Assets.xcassets */,
@@ -119,10 +134,9 @@
 		871EEAA0298330A100A3B09E /* Restroom Search */ = {
 			isa = PBXGroup;
 			children = (
-				871EEAA5298330CF00A3B09E /* RestroomSearchViewModel.swift */,
 				871EEAA1298330BC00A3B09E /* RestroomSearchView.swift */,
-				871EEAA3298330C800A3B09E /* RestroomSearchService.swift */,
 				343D566D29A689D800E17014 /* RestroomSearchLoadingState.swift */,
+				871EEAA5298330CF00A3B09E /* RestroomSearchViewModel.swift */,
 			);
 			path = "Restroom Search";
 			sourceTree = "<group>";
@@ -207,18 +221,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34CAAB2A29B7D030006CCA5A /* RestroomAttributeView.swift in Sources */,
+				34CAAB2729B7D021006CCA5A /* RestroomDetailsViewModel.swift in Sources */,
+				34CAAB2229B7CED1006CCA5A /* RestroomsService.swift in Sources */,
 				871EEA9529832FE400A3B09E /* ContentView.swift in Sources */,
+				34CAAB2529B7D008006CCA5A /* RestroomDetailsView.swift in Sources */,
 				871EEAA6298330CF00A3B09E /* RestroomSearchViewModel.swift in Sources */,
 				871EEAA9298331E100A3B09E /* Restroom.swift in Sources */,
 				3453CF0F2997094100AA3B98 /* RestroomBuilder.swift in Sources */,
-				871EEAA4298330C800A3B09E /* RestroomSearchService.swift in Sources */,
 				3453CF1229970AD300AA3B98 /* RestroomCreationViewModel.swift in Sources */,
 				871EEAA2298330BC00A3B09E /* RestroomSearchView.swift in Sources */,
 				871EEA9329832FE400A3B09E /* p01_loocatorApp.swift in Sources */,
 				343D566E29A689D800E17014 /* RestroomSearchLoadingState.swift in Sources */,
 				34C17C862990666400831417 /* Location.swift in Sources */,
 				3453CF0D299704C700AA3B98 /* RestroomCreationView.swift in Sources */,
-				3453CF1429970AFD00AA3B98 /* RestroomCreationService.swift in Sources */,
 				343D566B29A51A6500E17014 /* RestroomCreationState.swift in Sources */,
 				34C17C8C299066C100831417 /* LocationManager.swift in Sources */,
 			);

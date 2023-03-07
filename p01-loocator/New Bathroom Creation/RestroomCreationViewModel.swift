@@ -13,7 +13,7 @@ class RestroomCreationViewModel: ObservableObject {
     @Published var creationState: RestroomCreationState = .input
     
     private let geocoder = CLGeocoder()
-    private let service = RestroomCreationService()
+    private let service = RestroomsService()
     private let locationManager = LocationManager()
     
     @Published var isDebugRequest: Bool = true
@@ -86,7 +86,7 @@ class RestroomCreationViewModel: ObservableObject {
     private func createRestroom(for builder: RestroomBuilder) {
         Task {
             do {
-                try await service.createRestroom(for: builder, isDebugRequest: isDebugRequest)
+                try await service.create(for: builder, isDebugRequest: isDebugRequest)
                 
                 creationState = .success(message: "Successfully Created Restroom at \(Date())")
             } catch {

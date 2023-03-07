@@ -70,3 +70,9 @@ extension Restroom {
         return decoder
     }
 }
+
+extension Restroom{
+    static var example: Restroom {
+        Restroom(id: UUID(), facilityName: "TEST", streetAddress: "TEST", city: "TEST", state: "TEST", country: "TEST", latitude: 0.0, longitude: 0.0, accessible: true, genderNeutral: true, changingTable: true, createdAt: Date(), updatedAt: Date(), downvotes: 0, upvotes: 0)
+    }
+}

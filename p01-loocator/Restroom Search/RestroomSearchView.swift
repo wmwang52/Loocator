@@ -10,33 +10,48 @@ import SwiftUI
 struct RestroomSearchView: View {
     @StateObject private var vm = RestroomsSearchViewModel()
     var body: some View {
-        List {
-            Button("Find Restrooms") {
-                vm.startRestroomSearch()
-            }
-            
-            Section("Results") {
-                switch vm.state {
-                case .idle:
-                    Text("No location to show. Please fetch now")
-                    
-                case .loading:
-                    ProgressView()
-                    
-                case .success(let restrooms):
-                    ForEach(restrooms) { restroom in
-                        VStack(alignment: .leading) {
-                            Text(restroom.facilityName)
-                                .font(.callout)
+        NavigationStack {
+            List {
+                Button("Find Restrooms") {
+                    vm.startRestroomSearch()
+                }
+                
+                Section("Results") {
+                    switch vm.state {
+                    case .idle:
+                        Text("No location to show. Please fetch now")
+                        
+                    case .loading:
+                        ProgressView()
+                        
+                    case .success(let restrooms):
+                        ForEach(restrooms, id: \.id) { restroom in
                             
-                            Text(restroom.address)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
+                            NavigationLink {
+                                let vm = RestroomDetailsViewModel(restroom: restroom, didUpdateRestroom: vm.update(updated:), didDeleteRestroom: vm.delete(restroom:))
+                                    
+                                RestroomDetailsView(vm: vm)
+                            } label: {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(restroom.facilityName)
+                                            .font(.callout)
+                                                    
+                                        Text(restroom.address)
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
+                                        
+                                        if let distance = restroom.distance {
+                                            Text(distance.formatted() + " mi")
+                                                .font(.subheadline)
+                                                .foregroundColor(.secondary)
+                                        }
+                                    }
+                            }
                         }
+                        
+                    case .error(let message):
+                        Text(message)
                     }
-                    
-                case .error(let message):
-                    Text(message)
                 }
             }
         }
