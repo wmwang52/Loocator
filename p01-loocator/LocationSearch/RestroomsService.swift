@@ -92,6 +92,7 @@ extension RestroomsService {
 
         let (data, _) = try await session.data(for: request)
         let restroom = try decoder.decode(Restroom.self, from: data)
+
         return restroom
     }
 }

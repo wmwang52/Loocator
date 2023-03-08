@@ -11,6 +11,7 @@ import Combine
 
 // MARK: LocationManagerDelegate
 
+
 protocol LocationManagerDelegate: AnyObject {
     func locationManager(_ manager: LocationManager, didUpdateLocation location: Location)
     func locationManager(_ manager: LocationManager, didFailError error: Error)

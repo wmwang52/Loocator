@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 struct RestroomSearchView: View {
     @StateObject private var vm = RestroomsSearchViewModel()
     var body: some View {

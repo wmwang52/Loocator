@@ -8,6 +8,7 @@
 import Foundation
 
 @MainActor
+
 class RestroomsSearchViewModel: ObservableObject {
     private let service = RestroomsService()
     private let locationManager = LocationManager()

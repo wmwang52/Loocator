@@ -27,7 +27,7 @@ class RestroomDetailsViewModel: ObservableObject {
                 let upvote = try await service.upvote(id: restroom.id)
                 didUpdateRestroom(upvote)
 
-                self.restroom = restroom
+                self.restroom = upvote
                 
             } catch {
                 print(error.localizedDescription)
@@ -44,11 +44,10 @@ class RestroomDetailsViewModel: ObservableObject {
         Task {
             do {
                 let downvote = try await service.downvote(id: restroom.id)
+                
+                self.restroom = downvote
                 didUpdateRestroom(downvote)
 
-                self.restroom = restroom
-
-                
             } catch {
                 print(error.localizedDescription)
                 print(error)
@@ -62,7 +61,7 @@ class RestroomDetailsViewModel: ObservableObject {
     func delete() {
         Task {
             do {
-                let delete = try await service.delete(id: restroom.id)
+                try await service.delete(id: restroom.id)
                 didDeleteRestroom(self.restroom)
                 
             } catch {
