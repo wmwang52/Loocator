@@ -7,6 +7,7 @@
 
 import CoreLocation
 import Foundation
+import MapKit
 @MainActor
 
 class RestroomCreationViewModel: ObservableObject {
@@ -30,6 +31,17 @@ class RestroomCreationViewModel: ObservableObject {
     @Published var directions: String = ""
     @Published var distance: Double = 0.0
     @Published var location = Location(latitude: 0.0, longitude: 0.0)
+    
+    @Published var mapRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 35.90992, longitude: -79.05323),
+        latitudinalMeters: 100,
+        longitudinalMeters: 100
+    ) {
+        didSet {
+            location = Location(latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
+            reverseGeolocate(location: location)
+        }
+    }
     
     init() {
         locationManager.delegate = self

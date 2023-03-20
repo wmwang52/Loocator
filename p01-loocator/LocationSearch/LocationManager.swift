@@ -87,4 +87,6 @@ extension LocationManager: CLLocationManagerDelegate {
         delegate?.locationManager(self, didFailError: error)
         locationManager.stopUpdatingLocation()
     }
+    
+    
 }

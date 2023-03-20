@@ -16,7 +16,7 @@ struct RestroomCreationView: View {
         NavigationStack {
             Form {
                 Section {
-                    illustration
+                    map
                 }
                 switch vm.creationState {
                 case .input: inputView
@@ -59,13 +59,21 @@ struct RestroomCreationView: View {
         attributes
     }
     
-    private var illustration: some View {
-        Image("Bathroom")
-            .resizable()
-            .scaledToFit()
-            .frame(height: 136)
+    private var map: some View {
+        RestroomCreationMap(visibleRegion: $vm.mapRegion)
+            .frame(height: 200)
             .frame(maxWidth: .infinity, alignment: .center)
             .listRowBackground(Color.clear)
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .overlay {
+                Circle()
+                    .fill(Color.blue.opacity(0.75))
+                    .frame(width: 16, height: 16)
+                    .padding(6)
+                    .overlay {
+                        Circle().stroke(Color.blue)
+                    }
+            }
     }
     
     private func successView(message: String) -> some View {
