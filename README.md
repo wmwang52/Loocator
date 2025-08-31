@@ -1,20 +1,73 @@
-# Loocator
+# 🚻 Loocator
 
-<img width="449" alt="Screenshot 2023-05-15 at 8 29 18 PM" src="https://github.com/wmwang52/Loocator/assets/38409263/7cc2c8c4-ea31-44d5-a761-3aa9f505f1ed">
-<img width="437" alt="Screenshot 2023-05-15 at 8 29 25 PM" src="https://github.com/wmwang52/Loocator/assets/38409263/1a77860c-31ba-44b8-aebc-0993f2c02367">
-<img width="414" alt="Screenshot 2023-05-15 at 8 29 56 PM" src="https://github.com/wmwang52/Loocator/assets/38409263/27a6439b-742b-4cd4-842d-700375e05f07">
-<img width="401" alt="Screenshot 2023-05-15 at 8 29 02 PM" src="https://github.com/wmwang52/Loocator/assets/38409263/84d67fec-8725-4415-91af-7bce2fbec67a">
+Find clean, accessible, and inclusive bathrooms—right when you need them.
 
-## Background
+<p align="center">
+  <img src="https://github.com/wmwang52/Loocator/assets/38409263/7cc2c8c4-ea31-44d5-a761-3aa9f505f1ed" width="250" alt="Home Screen Screenshot">
+  <img src="https://github.com/wmwang52/Loocator/assets/38409263/1a77860c-31ba-44b8-aebc-0993f2c02367" width="250" alt="Bathroom Details Screenshot">
+  <img src="https://github.com/wmwang52/Loocator/assets/38409263/27a6439b-742b-4cd4-842d-700375e05f07" width="250" alt="Map View Screenshot">
+  <img src="https://github.com/wmwang52/Loocator/assets/38409263/84d67fec-8725-4415-91af-7bce2fbec67a" width="250" alt="Add Bathroom Screenshot">
+</p>
 
-- Our team developed an iOS application called Loocator, inspired by my mentor's bathroom-finding app. This application aimed to expand my iOS Development skills and create a scalable application. The goal of Loocator was to assist students in finding, reviewing, and locating the best bathrooms on campus. The application serves as a rating system that allows students to rate the cleanliness, accessibility, and gender-neutral features of bathrooms. Additionally, the application tracks the user's location to show nearby restrooms on a map.
+---
 
+## 📱 About
 
-## Description
+**Loocator** is an iOS app designed to help students discover, review, and locate the best bathrooms on campus. Inspired by my mentor’s original bathroom-finding app, Loocator expands on that idea with a modern, scalable solution. The app empowers users to:
 
-- Loocator consists of 4 main screens. The initial screen showcases nearby bathrooms based on the user's current location. Users can then select a bathroom to view its details, where they are presented with information such as accessibility features and cleanliness ratings. They can then upvote or downvote the bathroom based on their experience. Finally, users can add new bathrooms by clicking the "Add" button on the top right of the screen. Their location is automatically filled out, and they can add the necessary details to the bathroom.
+- **Find** the nearest bathrooms using real-time location.
+- **Review** and rate bathrooms for cleanliness, accessibility, and gender-neutral features.
+- **Contribute** by adding new bathrooms and sharing details with the community.
 
+---
 
-## How to run
+## ✨ Features
 
-- To run the app, clone the repository and launch it within Xcode on an Apple computer.
+- **Interactive Map:** Instantly see nearby restrooms based on your current location.
+- **Bathroom Details:** View ratings and accessibility features before you go.
+- **User Ratings:** Upvote or downvote bathrooms based on your experience.
+- **Easy Contributions:** Add new bathrooms in seconds—location auto-filled for you.
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone this repository**  
+   `git clone https://github.com/wmwang52/Loocator.git`
+2. **Open in Xcode**  
+   Launch the project (`.xcodeproj`) in Xcode on your Mac.
+3. **Run the app**  
+   Build and run on a simulator or your iOS device.
+
+---
+
+## 🏗️ Project Structure
+
+- `p01-loocator.xcodeproj/` – Xcode project files
+- `p01-loocator/` – App source code
+  - `Restroom Map/`
+  - `RestroomDetails/`
+  - `LocationSearch/`
+  - `New Bathroom Creation/`
+  - etc.
+
+---
+
+## 🙌 Contributing
+
+Have ideas or want to help? Open an issue or submit a pull request!
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="https://github.com/wmwang52/Loocator/assets/38409263/7cc2c8c4-ea31-44d5-a761-3aa9f505f1ed" width="180" alt="Home Screen">
+  <img src="https://github.com/wmwang52/Loocator/assets/38409263/1a77860c-31ba-44b8-aebc-0993f2c02367" width="180" alt="Bathroom Details">
+  <img src="https://github.com/wmwang52/Loocator/assets/38409263/27a6439b-742b-4cd4-842d-700375e05f07" width="180" alt="Map View">
+  <img src="https://github.com/wmwang52/Loocator/assets/38409263/84d67fec-8725-4415-91af-7bce2fbec67a" width="180" alt="Add Bathroom">
+</p>
+
+---
+
+> Created by [wmwang52](https://github.com/wmwang52) · Inspired by making campus life a little easier.
